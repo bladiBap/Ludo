@@ -29,7 +29,9 @@ public class Panel extends JPanel{
 
     public static void main(String[] args) {
 
-        new Frame(WIDTH, HEIGHT, new Panel());
+        //new Frame(WIDTH, HEIGHT, new Panel());
+        new Frame(WIDTH, HEIGHT, new PanelMenu());
+        //new Frame(WIDTH, HEIGHT, new PanelCreate());
     }
 
 

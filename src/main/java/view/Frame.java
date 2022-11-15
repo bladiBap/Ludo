@@ -9,8 +9,6 @@ import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.IOException;
-import java.net.ServerSocket;
 
 public class Frame extends JFrame implements MouseListener {
 
@@ -18,14 +16,10 @@ public class Frame extends JFrame implements MouseListener {
     private Sound audioDado = new Sound(ResourceLoader.loadSounds("PrestamelaAMi.wav"));
     private Sound audioPaso = new Sound(ResourceLoader.loadSounds("SonidoPaso.wav"));
 
-    public Frame(int width, int height, Panel panel) {
-        try {
-            //esto es para hacer lo de sockets pero aun no hice nda de eso xd
-            panel.serverSocket = new ServerSocket(9999);
-
-        } catch (IOException e){
-            System.exit(0);
-        }
+    public Frame(int width, int height, PanelMenu panel) {
+        //esto es para hacer lo de sockets pero aun no hice nda de eso xd
+        //panel.serverSocket = new ServerSocket(9999);
+        System.out.println("Server started");
 
         this.setTitle("Ludo | Proyecto");
         this.pack();
@@ -39,7 +33,7 @@ public class Frame extends JFrame implements MouseListener {
         this.addMouseListener(this);
         this.addComponentListener(new ComponentAdapter() {
             public void componentResized(ComponentEvent componentEvent) {
-               panel.resize();
+               //panel.resize();
             }
         });
     }
